@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             if(params.length == 0)
                 return null;
 
+
             String loc = params[0];
             URL weatherURL = NetworkUtils.buildUrl(loc);
 
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String[] data) {
-            if(data == null) {
+            if(data != null) {
                 for(String element : data) {
                     mWeatherTextView.append(element + "\n\n");
                 }
